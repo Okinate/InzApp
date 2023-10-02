@@ -1,0 +1,68 @@
+﻿<ul class="list-unstyled">
+    @foreach (var product in Products)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="#">
+                    <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
+                </a>                 
+            </div>
+            <div class="media-body">
+                <a href="#">
+                    <h4 class="mb-0">@product.Title</h4>
+                </a>
+                <p>@product.Description</p>
+                <p>@product.CategoryName</p>
+                <h5 class="price">
+                    $@product.Price
+                </h5>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+    private static List<Product> Products = new List<Product>
+    {
+        new Product
+        {
+            Id = 1,
+            Title = "Film1",
+            Description = "Opis do pierwszego Filmu leci opis etc..",
+            Category = "Film",
+            CategoryName = "Komedia",
+            ImageUrl = "https://a.allegroimg.com/original/11df3b/b06735d54620b0be04d1e128c7d5/MIRACULOUS-BIEDRONKA-I-CZARNY-KOT-FILM-DVD",
+            Price = 2.00m
+        },
+        new Product
+        {
+            Id = 2,
+            Title = "Film2",
+            Description = "Opis do drugiego Filmu leci opis etc..",
+            Category = "Film",
+            CategoryName = "Dramat",
+            ImageUrl = "https://gutekfilm.pl/uploads/x750/nostalgia-plakatpl-lq.jpg",
+            Price = 1.23m
+        },
+        new Product
+        {
+            Id = 3,
+            Title = "Film3",
+            Description = "Opis do trzeciego Filmu leci opis etc..",
+            Category = "Film",
+            CategoryName = "Komedia",
+            ImageUrl = "https://img.youtube.com/vi/CVjen-sfNnU/sddefault.jpg",
+            Price = 7.50m
+        },
+        new Product
+        {
+            Id = 4,
+            Title = "Film4",
+            Description = "Opis do czwartego Filmu leci opis etc.. i opis sobie dalej leci bo może...",
+            Category = "Film",
+            CategoryName = "Thriler",
+            ImageUrl = "https://www.007.com/wp-content/uploads/2020/08/skyfall.jpg",
+            Price = 13.99m
+        },
+    };
+}
